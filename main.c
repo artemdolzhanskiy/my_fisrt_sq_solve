@@ -1,28 +1,38 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 
 void priv(double a, double b, double c);
 void poka(double x1, double x2);
 void a_0(double a, double b, double c);
 void b_0(double a, double b, double c);
+void umn_vvod(double *t);
 
-void umn_vvod(double a, double b, double c);
 double min_root_kv_ur(double a, double b, double c);
 double max_root_kv_ur(double a, double b, double c);
 double descriminant(double a, double b, double c);
 
 
+
+
+
 int main(){
-    printf("Hello! This program solve kv_ur. \nEnter input data: a, b, c: \n");
-
-    double a = 0, b = 0, c = 0;
-    scanf("%lf %lf %lf", &a, &b, &c);
-    //umn_vvod(double &a, double &b, double &c);
+    printf("Hello! This program solve kv_ur. \nEnter input data: \n");
     
+    double a = 0, b = 0, c = 0;
 
-    printf("%lf %lf %lf \n", a, b, c);
+    printf("a:  ");
+    umn_vvod(&a);
+
+    printf("b:  ");
+    umn_vvod(&b);
+
+    printf("c:  ");
+    umn_vvod(&c);
+
 
     if (a == 0 && b != 0){
         a_0(a, b, c);
@@ -80,45 +90,17 @@ void poka(double x1, double x2){
 }
 
 
-/*void umn_vvod(double a, double b, double c){
-    char str[100];
-    fgets(str, sizeof(str), stdin);
-    int V = str[0];
-    while
-    
-}*/
-
-
-/*double umn_vvod(){
-    double chislo = 0;
-    int V;
-    V = getchar();
-    while(V == ' ' || V == '\n'){
-        if (V == '1'){
-            chislo = chislo * 10 + 1; 
-        }else if (V == '2'){
-            chislo = chislo * 10 + 2; 
-        }else if (V == '3'){
-            chislo = chislo * 10 + 3; 
-        }else if (V == '4'){
-            chislo = chislo * 10 + 4; 
-        }else if (V == '5'){
-            chislo = chislo * 10 + 5; 
-        }else if (V == '6'){
-            chislo = chislo * 10 + 6; 
-        }else if (V == '7'){
-            chislo = chislo * 10 + 7; 
-        }else if (V == '8'){
-            chislo = chislo * 10 + 8; 
-        }else if (V == '9'){
-            chislo = chislo * 10 + 9; 
-        }else if (V == '0'){
-            chislo = chislo * 10 + 0;
+void umn_vvod(double *t){
+    char str[100], *end;;
+    gets(str);
+    for (int i = 0; str[i] != NULL; ++i){
+        if (!isdigit(str[i]) && str[i] != '-'){
+            printf("incorrect data\n");
+            exit(0);
         }
-        V = getchar();
     }
-    return chislo;
-}*/
+    *t = atof(str);
+}
 
 
 double descriminant(double a, double b, double c){
