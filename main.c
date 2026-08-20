@@ -14,7 +14,6 @@
 
 void roots_count(double a, double b, double c);
 void print_roots(double x1, double x2);
-void a_0(double a, double b, double c);
 void umn_vvod(double *t);
 void roots_kv_ur(double a, double b, double c, double *X1, double *x2);
 void vvod(double *a, double *b, double *c);
@@ -33,7 +32,7 @@ int main(){
     double a = 0, b = 0, c = 0;
     vvod(&a, &b, &c);
 
-    
+
     check_a0_b0(a, b, c);
 
 
