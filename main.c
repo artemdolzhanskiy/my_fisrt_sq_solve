@@ -21,9 +21,27 @@ struct square_equation{
 };
 
 void run_tests();
+
+
 struct square_equation solve_eq(struct square_equation eq);
+
+
+
+
 bool equality_eps(double ob_1, double ob_2);
 
+
+
+
+
+int main(){
+    printf("ok\n");
+
+    run_tests();
+
+    return 0;
+
+}
 
 
 void run_tests(){
@@ -103,15 +121,3 @@ struct square_equation solve_eq(struct square_equation eq){
     return eq;
 }
 
-
-
-
-
-int main(){
-    printf("ok\n");
-
-    run_tests();
-
-    return 0;
-
-}
