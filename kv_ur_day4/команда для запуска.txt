@@ -1,0 +1,5 @@
+cd C:\Users\dolzh\OneDrive\Desktop\пр\kv_ur_day4  
+
+g++ main.cpp tests.cpp input_eq.cpp solve_eq.cpp print_eq.cpp -o program 
+
+C:\Users\dolzh\OneDrive\Desktop\пр\kv_ur_day4\program.exe 
