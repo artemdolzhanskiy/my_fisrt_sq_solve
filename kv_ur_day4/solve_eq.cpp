@@ -9,7 +9,7 @@ bool EqualityEps(double ob_1, double ob_2){
 struct square_equation SolveEq(struct square_equation eq){
     double discr = (eq.b * eq.b - 4 * eq.a * eq.c);
 
-    if (eq.a == 0 && eq.b != 0){
+    if (EqualityEps(eq.a, 0) && !EqualityEps(eq.b, 0)){
         eq.x1 = -eq.c / eq.b;
         discr = -1;
     }
@@ -22,11 +22,11 @@ struct square_equation SolveEq(struct square_equation eq){
         double x_max = fmax(eq.x1, eq.x2);
         eq.x1 = x_min;
         eq.x2 = x_max;
-        if (eq.x1 == 0) eq.x1 = 0;
-        if (eq.x2 == 0) eq.x2 = 0;
+        if (EqualityEps(eq.x1, 0)) eq.x1 = 0;
+        if (EqualityEps(eq.x2, 0)) eq.x2 = 0;
     }else if (EqualityEps(discr, 0)){
         eq.x1 = (-eq.b) / (2 * eq.a);
-        if (eq.x1 == 0) eq.x1 = 0;
+        if (EqualityEps(eq.x1, 0)) eq.x1 = 0;
     }
 
     eq.n_roots = (!isnan(eq.x1)) + (!isnan(eq.x2));
