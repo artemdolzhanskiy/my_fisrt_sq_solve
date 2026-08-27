@@ -1,5 +1,5 @@
-#ifndef PRINT_EQ_H
-#define PRINT_EQ_H
+#ifndef USER_TRAINING_H
+#define USER_TRAINING_H
 
 #include <stdio.h>
 #include <math.h>
@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "solve_eq.h"
 #include "input_eq.h"
 
-void PrintEq(struct square_equation eq_print);
+void StartTraining();
 
-void PrintEqFile(struct square_equation eq_print);
 
 #endif

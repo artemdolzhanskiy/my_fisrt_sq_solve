@@ -7,8 +7,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "print_eq.h"
+#include "input_eq.h"
 
 void EqGrafic(struct square_equation eq);
+
+bool EqualityEpsGraf(double ob_1, double ob_2);
 
 #endif
