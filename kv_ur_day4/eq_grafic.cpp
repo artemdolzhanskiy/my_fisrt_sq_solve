@@ -18,7 +18,7 @@ void EqGrafic(struct square_equation eq){
     double vertex_x = (-eq.b) / (2 * eq.a);
     double vertex_y = eq.a * (vertex_x * vertex_x) + eq.b * vertex_x + eq.c;
 
-    if (vertex_x > 100 || vertex_x < -100 || vertex_y > 100 || vertex_y < -100){
+    if( (vertex_x > 100 || vertex_x < -100 || vertex_y > 100 || vertex_y < -100) && eq.a != 0 ){
         fprintf(file, "Sorry, vertex is too far of (0; 0)");
         return ;
     }

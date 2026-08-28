@@ -9,7 +9,23 @@
 
 #include "input_eq.h"
 
-bool EqualityEps(double ob_1, double ob_2);
+
+/*!
+    \brief Solve
+
+    This function  solve square equation. Caltulating discriminant and roots.
+
+    \return struct square_equation with roots of square equation
+*/
 struct square_equation SolveEq(struct square_equation eq);
+
+/*!
+    \brief Compare with eps
+
+    This function compare two float numbers
+
+    \return true or false
+*/
+bool EqualityEps(double ob_1, double ob_2);
 
 #endif

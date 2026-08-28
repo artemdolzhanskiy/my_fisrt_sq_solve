@@ -1,5 +1,6 @@
 #include "input_eq.h"
 
+
 struct square_equation InputEq(){
 
     while (true){

@@ -13,8 +13,12 @@
 #define GREEN   "\033[0;32m"
 #define RESET   "\033[0m"
 
+/*!
+    \brief Autotests
 
+    This function testing program on correct data.
 
+*/
 void RunTests();
 
 #endif

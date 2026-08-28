@@ -7,6 +7,16 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+
+
+/*!
+    \brief Struct for storage square equation
+
+    This struct storag:
+    a,b,c - coefficients of square equation
+    n_roots - how many roots square equation has
+    x1, x2 - square equation's roots 
+ */
 struct square_equation{
     double a;
     double b;
@@ -16,12 +26,38 @@ struct square_equation{
     double x2;
 };
 
+
+/*!
+    \brief Function for input coefficients of square equation
+
+    \return struct square_equation with data about square equation
+*/
 struct square_equation InputEq();
 
+/*!
+    \brief Helping function for InputEq
+
+    This function input one float number and check him
+
+    \return true if OK or false
+*/
 bool input_coef(double *coef);
 
+/*!
+    \brief Helping function for input_coef
+
+    This function check number
+
+    \return true if OK or false
+*/
 bool ClearInput_If_Needed();
 
+
+/*!
+    \brief Function for input coefficients of square equation from file
+
+    \return struct square_equation with data about square equation from file
+*/
 struct square_equation InputEqFile(int k_test_before);
 
 #endif

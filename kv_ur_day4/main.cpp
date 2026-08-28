@@ -7,6 +7,7 @@
 
 #include "eq_menu.h"
 
+
 int main(int argc, char *argv[]){
 
     if (argc != 2){

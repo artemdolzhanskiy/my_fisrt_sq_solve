@@ -1,13 +1,13 @@
 #include "eq_menu.h"
 
 void Eq_Help(){
-    printf( "-help - get information about this program\n"
-            "-enter_test - user can enter test\n"
-            "-auto_test - program start autotesting\n"
-            "-test_from_file - program start testing on data from file file_with_data.txt\n"
-            "-training - program can help you training solve square equation\n"
-            "-write_test_to_file - program write a b c(from user), n_roots, x1, x2(from program) in file_for_writing.txt\n"
-            "-draw_grafic - program draw a grafic on results of test from user to file_for_grafic.txt\n");
+    printf(BLUE "-help - get information about this program\n"
+                "-enter_test - user can enter test\n"
+                "-auto_test - program start autotesting\n"
+                "-test_from_file - program start testing on data from file file_with_data.txt\n"
+                "-training - program can help you training solve square equation\n"
+                "-write_test_to_file - program write a b c(from user), n_roots, x1, x2(from program) in file_for_writing.txt\n"
+                "-draw_grafic - program draw a grafic on results of test from user to file_for_grafic.txt\n" RESET);
 }
 
 void Eq_Enter_Test(){
@@ -21,29 +21,29 @@ void Eq_Enter_Test(){
         PrintEq(eq);
 
 
-        printf("Do you want to write results of last test to file_for_writing.txt?\n");
+        printf(LIGHT_BLUE "Do you want to write results of last test to file_for_writing.txt?\n" RESET);
         printf("Enter 1 if YES or 0 if NO:  ");
 
         int choose1 = 0;
         scanf("%d", &choose1);
-        printf("As you command, my lord.\n\n");
+        printf(GREEN "As you command, my lord.\n\n" RESET);
         if (choose1){
             PrintEqFile(eq);
         }
 
-        printf("Do you want to draw a grafic on results of last test to file_for_grafic.txt?\n");
+        printf(LIGHT_BLUE "Do you want to draw a grafic on results of last test to file_for_grafic.txt?\n" RESET);
         printf("Enter 1 if YES or 0 if NO:  ");
         scanf("%d", &choose1);
-        printf("As you command, my lord.\n\n");
+        printf(GREEN "As you command, my lord.\n\n" RESET);
         if (choose1){
             EqGrafic(eq);
         }
 
 
-        printf("Do you want to try again?\n");
+        printf(LIGHT_BLUE "Do you want to try again?\n" RESET);
         printf("Enter 1 or 0:  ");
         scanf("%d", &choose1);
-        printf("As you command, my lord.\n\n");
+        printf(GREEN "As you command, my lord.\n\n" RESET);
         if (choose1 != 1){
             exit(0);
         }
@@ -55,7 +55,7 @@ void Eq_Auto_Test(){
 }
 
 void Eq_Test_From_File(){
-    printf("\nOK! Starting testing on data from file file_with_data.txt\n");
+    printf(GREEN "\nOK! Starting testing on data from file file_with_data.txt\n" RESET);
 
     int k_test_before = 0;
     while (true){
@@ -88,7 +88,7 @@ void Eq_Training(){
 
         StartTraining();
         
-        printf("Tests ran out. Good luck!\n\n");
+        printf(GREEN "Tests ran out. Good luck!\n\n" RESET);
 
     }
 }
@@ -99,7 +99,7 @@ void Eq_Write_Test_To_File(){
     eq = SolveEq(eq);
 
     PrintEqFile(eq);
-    printf("Mission completed, my lord\n\n");
+    printf(GREEN "Mission completed, my lord\n\n" RESET);
 
 }
 
@@ -109,5 +109,5 @@ void Eq_Draw_Grafic(){
     eq = SolveEq(eq);
 
     EqGrafic(eq);
-    printf("Mission completed, my lord\n\n");
+    printf(GREEN "Mission completed, my lord\n\n" RESET);
 }
