@@ -18,6 +18,8 @@ struct square_equation{
 
 struct square_equation InputEq();
 
+bool input_coef(double *coef);
+
 bool ClearInput_If_Needed();
 
 struct square_equation InputEqFile(int k_test_before);
