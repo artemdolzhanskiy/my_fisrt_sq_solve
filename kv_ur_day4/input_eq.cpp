@@ -1,33 +1,32 @@
 #include "input_eq.h"
 
 
-struct square_equation InputEq(){
+void InputEq(struct square_equation *eq){
 
     while (true){
-        double a = NAN, b = NAN, c = NAN;
-        
         printf("a:  ");
-        if (input_coef(&a)){
+        if (input_coef(&(eq->a))){
             printf("Incorrect data! Try again!\n");
             continue;
         }
+
         
         printf("b:  ");
-        if (input_coef(&b)){
+        if (input_coef(&(eq->b))){
             printf("Incorrect data! Try again!\n");
             continue;
         }
         
         printf("c:  ");
-        if (input_coef(&c)){
+        if (input_coef(&(eq->c))){
             printf("Incorrect data! Try again!\n");
             continue;
         }
 
-        struct square_equation eq_input =  {a, b, c, 0, NAN, NAN};
-        return eq_input;
+        return;
 
     }
+    
 
 }
 

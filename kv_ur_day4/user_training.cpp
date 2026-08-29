@@ -24,7 +24,7 @@ void StartTraining(){
             break;
         }
 
-        eq = SolveEq(eq);
+        SolveEq(&eq);
 
         if (isnan(eq.a))
             break;
@@ -84,7 +84,7 @@ void StartTraining(){
                     continue;
                 }
 
-                if (EqualityEps(user_x1, eq.x1) && EqualityEps(user_x2, eq.x2)){
+                if ((EqualityEps(user_x1, eq.x1) && EqualityEps(user_x2, eq.x2)) || (EqualityEps(user_x1, eq.x2) && EqualityEps(user_x2, eq.x1))) {
                     printf("Correct! Good job!\n\n");
                     break;
                 }

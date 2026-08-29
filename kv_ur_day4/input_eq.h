@@ -30,12 +30,16 @@ struct square_equation{
 /*!
     \brief Function for input coefficients of square equation
 
+    \param [out] eq struct square_equation with data about square equation
+
     \return struct square_equation with data about square equation
 */
-struct square_equation InputEq();
+void InputEq(struct square_equation *eq);
 
 /*!
     \brief Helping function for InputEq
+    
+    \param [in] coef (pointer) of square   
 
     This function input one float number and check him
 
@@ -55,6 +59,10 @@ bool ClearInput_If_Needed();
 
 /*!
     \brief Function for input coefficients of square equation from file
+
+    \param [in] k_test_before how many tests need to skip in file
+
+    \param [out] eq struct square_equation with data about square equation from file
 
     \return struct square_equation with data about square equation from file
 */

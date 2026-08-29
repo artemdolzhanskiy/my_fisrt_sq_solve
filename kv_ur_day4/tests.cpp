@@ -39,7 +39,7 @@ void RunTests(){
             .x2 = NAN
         };
 
-        eq = SolveEq(eq); //TODO: make ykazateli kogda ded rasskazhet
+        SolveEq(&eq);
 
         struct square_equation eq_ref = array_tests[test_i]; 
 

@@ -11,15 +11,19 @@
 
 /*!
     \brief Plot
+    
+    \param [in] eq struct square_equation with data about square equation 
 
-    This function draw plot of square equation in file
+    \details This function draw plot of square equation in file
 */
 void EqGrafic(struct square_equation eq);
 
 /*!
     \brief Compare with eps
 
-    This function help draw plot
+    \param [in] ob_1, ob_2two float numbers
+
+    \details This function help draw plot
     \return true or false
 */
 bool EqualityEpsGraf(double ob_1, double ob_2);

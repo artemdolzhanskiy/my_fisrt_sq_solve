@@ -14,9 +14,19 @@ void Eq_Enter_Test(){
     while (true){
         printf("Please enter data\n");
 
-        struct square_equation eq = InputEq();
+        //struct square_equation eq = InputEq();
+        struct square_equation eq = {
+            .a = NAN,
+            .b = NAN,
+            .c = NAN,
+            .n_roots = 0,
+            .x1 = NAN,
+            .x2 = NAN
+        };
 
-        eq = SolveEq(eq);
+        InputEq(&eq);
+
+        SolveEq(&eq);
 
         PrintEq(eq);
 
@@ -71,7 +81,7 @@ void Eq_Test_From_File(){
             break;
         }
 
-        eq = SolveEq(eq);
+        SolveEq(&eq);
 
         if (isnan(eq.a))
             break;
@@ -95,8 +105,20 @@ void Eq_Training(){
 
 void Eq_Write_Test_To_File(){
     printf("Please enter data\n");
-    struct square_equation eq = InputEq();
-    eq = SolveEq(eq);
+    //struct square_equation eq = InputEq();
+    struct square_equation eq = {
+            .a = NAN,
+            .b = NAN,
+            .c = NAN,
+            .n_roots = 0,
+            .x1 = NAN,
+            .x2 = NAN
+        };
+
+    InputEq(&eq);
+
+
+    SolveEq(&eq);
 
     PrintEqFile(eq);
     printf(GREEN "Mission completed, my lord\n\n" RESET);
@@ -105,8 +127,19 @@ void Eq_Write_Test_To_File(){
 
 void Eq_Draw_Grafic(){
     printf("Please enter data\n");
-    struct square_equation eq = InputEq();
-    eq = SolveEq(eq);
+    struct square_equation eq = {
+            .a = NAN,
+            .b = NAN,
+            .c = NAN,
+            .n_roots = 0,
+            .x1 = NAN,
+            .x2 = NAN
+        };
+
+    InputEq(&eq);
+
+
+    SolveEq(&eq);
 
     EqGrafic(eq);
     printf(GREEN "Mission completed, my lord\n\n" RESET);
