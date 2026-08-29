@@ -15,6 +15,7 @@ void EqGrafic(struct square_equation eq){
 
     fprintf(file, "Grafic of square equation %lgx^2 + %lgx + %lg = 0.\n", eq.a, eq.b, eq.c);
     
+    
     double vertex_x = (-eq.b) / (2 * eq.a);
     double vertex_y = eq.a * (vertex_x * vertex_x) + eq.b * vertex_x + eq.c;
 
@@ -28,10 +29,10 @@ void EqGrafic(struct square_equation eq){
     char grafic[200][200] = {};
     for (int i = 0; i < 200; ++i){
         for (int j = 0; j < 200; ++j) {
-            if (i == 100){
+            if (i == 101){
                 grafic[i][j] = '-';
             }
-            else if (j == 100){
+            else if (j == 99){
                 grafic[i][j] = '|';
             }
             else{
@@ -40,17 +41,46 @@ void EqGrafic(struct square_equation eq){
         }
     }
 
-    for (int j = 0; j < 200; ++j){
-        for (int i = 0; i < 200; ++i){
+    int koord[200] = {};
+    for (int j = 1; j < 199; ++j){
+        for (int i = 1; i < 199; ++i){
             double x = j - 100;
             double y = i - 100;
             //printf("%d %d \n", i, j);
-            if (EqualityEpsGraf(eq.a * x * x + eq.b * x + eq.c, y)){
+            double y_res = eq.a * x * x + eq.b * x + eq.c;
+            if (y_res > 100 || y_res <= -100){
+                continue;
+            }
+            if ( EqualityEpsGraf(y_res, y) ){
+                koord[j] = i;
                 grafic[i][j] = 'X';
             }
         }
-    
     }
+    for (int j = 1; j < 199; ++j){
+        if (koord[j] == 0){
+            continue;
+        }
+
+        if (eq.a > 0){
+            for (int i = koord[j]; i < 200; ++i){
+                grafic[i][j] = 'X';
+                if (grafic[i][j-1] == 'X' || grafic[i][j+1] == 'X'){
+                    break;
+                }
+            }
+        }
+        else if (eq.a < 0){
+            for (int i = koord[j]; i > 0; --i){
+                grafic[i][j] = 'X';
+                if (grafic[i][j-1] == 'X' || grafic[i][j+1] == 'X'){
+                    break;
+                }
+            }
+        }
+    }
+
+    
 
     //printf("42\n");
 
